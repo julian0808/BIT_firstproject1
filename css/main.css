@@ -1,0 +1,132 @@
+html, 
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #fff;
+    overflow: hidden; /* Prevents extra white space */
+
+}
+
+body {
+    background: white;
+    color: #fff;
+    line-height: 1.5;
+    font-family: "Helvetica Neue", Helvetica, Arial,"Segoe UI", Roboto,
+    sans-serif;
+}
+
+.swiper-container {
+    overflow: hidden;
+  }
+
+.swiper {
+    width: 100vw; /* Ocupa todo el ancho de la ventana */
+      height: 100vh; /* Opcional: si quieres que también ocupe toda la altura */
+  }
+
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 !important;
+    padding: 0 !important;
+
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .swiper {
+      height: 300px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .swiper {
+      height: 250px;
+    }
+  }
+
+  /* GLIDE JS */
+
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #fff;
+    overflow: hidden; /* Prevents extra white space */
+
+}
+
+.glide__slide img{
+    width: 100%;
+}
+
+.glide__slide{
+    filter: blur(6px);
+    opacity: .7;
+    transition: .3s linear;
+}
+
+.glide__slide--active{
+    opacity: 1;
+    filter: none;
+    transform: scale(1.1);
+}
+
+.glide__slides {
+   overflow: visible; 
+}
+
+/* Default styles for arrows */
+.glide__arrow {
+    background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent black */
+    color: black; /* Arrow color */
+    border: none;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  /* Change color on hover */
+  .glide__arrow:hover {
+    background-color: rgba(255, 0, 0, 0.7); /* Red on hover */
+  }
+  
+  /* Change color for left arrow */
+  .glide__arrow--left {
+    background-color: rgba(0, 0, 255, 0.5); /* Blue for left arrow */
+  }
+  
+  /* Change color for right arrow */
+  .glide__arrow--right {
+    background-color: rgba(0, 255, 0, 0.5); /* Green for right arrow */
+  }
+  
+

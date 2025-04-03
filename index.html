@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Watch E-commerce Website</title>
+
+    <!-- Bootstrap CSS (debe cargarse primero) -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <!-- Dependencias externas (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
+
+    <!-- Boxicons (depende de fuentes y Bootstrap) -->
+    <link rel="stylesheet" href="./css/boxicons.min.css">
+
+    <!-- Glide CSS -->
+    <link rel="stylesheet" href="./css/glide.core.min.css">
+    <link rel="stylesheet" href="./css/glide.theme.min.css">
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!-- Custom CSS (debe ir al final para sobreescribir estilos) -->
+    <link rel="stylesheet" href="./css/style.css">
+
+
+    <!-- loca styles -->
+    <style>
+        .project {
+            position: relative;
+            text-align: center;
+            background: black;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .project .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            /* Adjust height as needed */
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+        }
+
+        .project .content h2 {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .project .content h6 {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .title1,
+        .title2 {
+            color: white !important;
+        }
+
+        .owl-dots {
+            display: block !important;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .owl-dot {
+            width: 10px;
+            height: 10px;
+            background-color: green;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 5px;
+        }
+
+        .owl-dot.active {
+            background-color: green;
+        }
+
+        .owl-dot.active span {
+            background-color: #DDA853 !important;
+        }
+
+        .team-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .team-member {
+            position: relative;
+            text-align: center !;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member img {
+            width: 400px;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 87, 34, 0.8);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            border-radius: 10px;
+        }
+
+        .team-member:hover .overlay {
+            opacity: 1;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar">
+
+    <!-- Top Navbar Section -->
+    <nav class="top-nav" id="home">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-auto">
+                    <p><i class='bx bxs-envelope'></i> <span>julianm08@gmail.com</span></p>
+                    <p><i class='bx bxs-phone-call'></i> <span>(57) 555 9988</span></p>
+                </div>
+                <div class="col-auto">
+                    <div class="social-links">
+                        <a href="#"><i class='bx bxl-facebook'></i></a>
+                        <a href="#"><i class='bx bxl-twitter'></i></a>
+                        <a href="#"><i class='bx bxl-github'></i></a>
+                        <a href="#"><i class='bx bxl-youtube'></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="./assets/img/Logo/watch-logo-design-casual-style-black-white-monochrome_1108897-9-removebg-preview.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#projects">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#reviews">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#blog">Blog</a></li>
+                </ul>
+                <a href="#" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact US</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- empay spaces Section -->
+    <br>
+    <br>
+    <br>
+
+    <!-- Glide Slider Section -->
+    <div class="images glide" data-aos="fade-up">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                <li class="glide__slide"><img src="./assets/img/slider_swiperjs/rolex1.jpg" alt="Rolex Watch"></li>
+                <li class="glide__slide"><img src="./assets/img/slider_swiperjs/patekPhilippe1.jpg" alt="Patek Philippe Watch"></li>
+                <li class="glide__slide"><img src="./assets/img/slider_swiperjs/crazyhours.jpg" alt="Crazy Hours Watch"></li>
+                <li class="glide__slide"><img src="./assets/img/slider_swiperjs/omega.jpg" alt="Omega Watch"></li>
+            </ul>
+
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 py-5">
+                    <div class="row">
+
+                        <div class="col-12" data-aos="fade-right" data-aos-delay="5">
+                            <div class="info-box d-flex align-items-center">
+                                <img src="./assets/img/icon/icon2.png" alt="Icon">
+                                <div class="ms-4">
+                                    <h5>Digital Marketing</h5>
+                                    <p>It is a long established fact that a reader will be distracted by the readable content of a page.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-4" data-aos="fade-right" data-aos-delay="10">
+                            <div class="info-box">
+                                <img src="./assets/img/icon/icon3.png" alt="">
+                                <div class="ms-4">
+                                    <h5>E-mail Marketing</h5>
+                                    <p>It is a long established fact that a reader will be distracted by the readable
+                                        content of a page </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-4" data-aos="fade-right" data-aos-delay="15">
+                            <div class="info-box">
+                                <img src="./assets/img/icon/icon5.png" alt="">
+                                <div class="ms-4">
+                                    <h5>Buisness Marketing</h5>
+                                    <p>It is a long established fact that a reader will be distracted by the readable
+                                        content of a page </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <img src="./assets/img/about1.png" alt="About Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MILESTONE -->
+    <div class="container1" data-aos="fade-up" data-aos-delay="35">
+        <div class="content">
+            <div class="box">
+                <div class="icon"><i class='bx bxs-user'></i></div>
+                <div class="num" data-num="4500">0</div>
+                <div class="text">Happy Clients</div>
+            </div>
+            <div class="box">
+                <div class="icon"><i class='bx bx-code'></i></div>
+                <div class="num" data-num="1000">0</div>
+                <div class="text">Products Sold</div>
+            </div>
+            <div class="box">
+                <div class="icon"><i class='bx bxs-cloud-download'></i></div>
+                <div class="num" data-num="6">0</div>
+                <div class="text">Brands Availables</div>
+            </div>
+            <div class="box">
+                <div class="icon"><i class='bx bxl-youtube'></i></div>
+                <div class="num" data-num="3800">0</div>
+                <div class="text">YouTube Subscribers</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="container" data-aos="fade" data-aos-delay="45">
+            <div class="row">
+                <div class="col-12 intro">
+                    <h6>Our Services</h6>
+                    <h1>What we provide?</h1>
+                    <p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                        roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-delay="45">
+                    <div class="service">
+                        <img src="./assets/img/icon/icon1.png" alt="">
+                        <h5>Watch E-comerce</h5>
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                            classical Latin literature from</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-delay="50">
+                    <div class="service">
+                        <img src="./assets/img/icon/icon2.png" alt="">
+                        <h5>Watch Repair</h5>
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                            classical Latin literature from</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-delay="55">
+                    <div class="service">
+                        <img src="./assets/img/icon/icon3.png" alt="">
+                        <h5>SpareParts-Watches</h5>
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                            classical Latin literature from</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-delay="60">
+                    <div class="service">
+                        <img src="./assets/img/icon/icon4.png" alt="">
+                        <h5>Watch Service 1</h5>
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                            classical Latin literature from</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-delay="65">
+                    <div class="service">
+                        <img src="./assets/img/icon/icon5.png" alt="">
+                        <h5>Watch Service 2</h5>
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                            classical Latin literature from</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6" data-aos="fade-up" data-aos-delay="70">
+                    <div class="service">
+                        <img src="./assets/img/icon/icon6.png" alt="">
+                        <h5>Watch Service 3</h5>
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                            classical Latin literature from</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 intro">
+                    <h6>Our Work</h6>
+                    <h1>What we provide?</h1>
+                    <p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                        roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+                </div>
+            </div>
+        </div>
+        <div class="owl-carousel project-slider">
+            <div class="project">
+                <img src="./assets/img/project1.jpg" alt="Project 1">
+                <div class="overlay"></div>
+                <div class="content">
+                    <h2 class="title1">Project Title</h2>
+                    <h6 class="title2">Project Subtitle</h6>
+                </div>
+            </div>
+            <div class="project">
+                <img src="./assets/img/project2.jpg" alt="Project 2">
+                <div class="overlay"></div>
+                <div class="content">
+                    <h2 class="title1">Project Title</h2>
+                    <h6 class="title2">Project Subtitle</h6>
+                </div>
+            </div>
+            <div class="project">
+                <img src="./assets/img/project3.jpg" alt="Project 3">
+                <div class="overlay"></div>
+                <div class="content">
+                    <h2 class="title1">Project Title</h2>
+                    <h6 class="title2">Project Subtitle</h6>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team" class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 intro">
+                    <h6>Our Team</h6>
+                    <h1>Meet Our Crew Members</h1>
+                    <p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                        roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+                </div>
+            </div>
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="./assets/img/team_1.jpg" alt="Marvin McKinney">
+                    <div class="overlay">
+                        <div class="social-icons">
+                            <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                            <a href="#"><i class='bx bxl-pinterest'></i></a>
+                        </div>
+                    </div>
+                    <h3>Marvin McKinney</h3>
+                    <p>E-commerce Administrator</p>
+                </div>
+                <div class="team-member">
+                    <img src="./assets/img/team_2.jpg" alt="Marvin McKinney">
+                    <div class="overlay">
+                        <div class="social-icons">
+                            <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                            <a href="#"><i class='bx bxl-pinterest'></i></a>
+                        </div>
+                    </div>
+                    <h3>Kathryn Murphy</h3>
+                    <p>Watch Technicians</p>
+                </div>
+                <div class="team-member">
+                    <img src="./assets/img/team_3.jpg" alt="Marvin McKinney">
+                    <div class="overlay">
+                        <div class="social-icons">
+                            <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                            <a href="#"><i class='bx bxl-pinterest'></i></a>
+                        </div>
+                    </div>
+                    <h3>Darrel Steward</h3>
+                    <p>Watch Seller & Specialist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="bg-cover">
+        <div class="owl-carousel owl-theme" id="reviews-slider">
+
+            <div class="review">
+                <img src="./assets/img/team_1.jpg" alt="">
+                <h4 class="text-white">Jonathon Doe Khan</h4>
+                <small class="">Web Developer</small>
+                <p class="lead text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, reprehenderit eum animi totam eligendi alias sunt non nemo deleniti blanditiis porro explicabo pariatur, ducimus dolorem ipsum nostrum enim unde officia! Architecto, suscipit.</p>
+            </div>
+            <div class="review">
+                <img src="./assets/img/team_2.jpg" alt="">
+                <h4 class="text-white">Julian Mesa</h4>
+                <small class="">Customer</small>
+                <p class="lead text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, reprehenderit eum animi totam eligendi alias sunt non nemo deleniti blanditiis porro explicabo pariatur, ducimus dolorem ipsum nostrum enim unde officia! Architecto, suscipit.</p>
+            </div>
+            <div class="review">
+                <img src="./assets/img/team_1.jpg" alt="">
+                <h4 class="text-white">Kobe Bryant</h4>
+                <small class="">Customer</small>
+                <p class="lead text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, reprehenderit eum animi totam eligendi alias sunt non nemo deleniti blanditiis porro explicabo pariatur, ducimus dolorem ipsum nostrum enim unde officia! Architecto, suscipit.</p>
+            </div>
+            <div class="review">
+                <img src="./assets/img/team_2.jpg" alt="">
+                <h4 class="text-white">Gareth Bale</h4>
+                <small class="">Customer</small>
+                <p class="lead text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, reprehenderit eum animi totam eligendi alias sunt non nemo deleniti blanditiis porro explicabo pariatur, ducimus dolorem ipsum nostrum enim unde officia! Architecto, suscipit.</p>
+            </div>
+            <div class="review">
+                <img src="./assets/img/team_3.jpg" alt="">
+                <h4 class="text-white">James Blade</h4>
+                <small class="">Customer</small>
+                <p class="lead text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, reprehenderit eum animi totam eligendi alias sunt non nemo deleniti blanditiis porro explicabo pariatur, ducimus dolorem ipsum nostrum enim unde officia! Architecto, suscipit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 intro">
+                    <h6>Our Blog</h6>
+                    <h1>Latest Blog Posts</h1>
+                    <p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                        roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="blog-post">
+                        <a href="" class="tag">Web Design</a>
+                        <img src="./assets/img/project5.jpg" alt="">
+                        <small>12 Dec, 2025</small>
+                        <h4 class="custom-hover">Web Design in 2025</h4>
+                        <p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                            roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog-post">
+                        <a href="" class="tag">Our Staff</a>
+                        <img src="./assets/img/project4.jpg" alt="">
+                        <small>12 Dec, 2025</small>
+                        <h4 class="custom-hover">Our Staff in 2025</h4>
+                        <p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                            roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog-post">
+                        <a href="" class="tag">Our Storesin US</a>
+                        <img src="./assets/img/project3.jpg" alt="">
+                        <small>12 Dec, 2025</small>
+                        <h4 class="custom-hover">Our Stores in US</h4>
+                        <p class="mx-auto">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                            roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 mx-auto">
+                        <div class="text-center">
+                            <img class="mx-auto" id="logofooter" src="./assets/img/Logo/logo_white.png" alt="">
+                        </div>
+                        <p class="mx-auto text-white">Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+                            roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old</p>
+                        <div class="col-auto social-icons" id="icons_footer">
+                            <a href="#"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter'></i></a>
+                            <a href="#"><i class='bx bxl-instagram'></i></a>
+                            <a href="#"><i class='bx bxl-pinterest'></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="mb-0 text-center text-white">Copyright2025. All rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!---
+    
+    -->
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Contact Us</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-4 bg-cover" style="background-image: url(./assets/img/c2.jpg); min-height: 300px;"></div>
+                            <div class="col-lg-8">
+                                <form action="" class="row p-lg-5 gy-3">
+                                    <h1>Get in touch</h1>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis adipisci culpa placeat?</p>
+                                    <div class="col-lg-6">
+                                        <label for="exampleFormControlInput1" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Jon">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label for="exampleFormControlInput1" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Doe">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="exampleFormControlInput1" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Jondoe@gmail.com">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">Message</label>
+                                        <textarea name="" id="" cols="30" rows="4" class="form-control" placeholder="Wow, You guys are amazing!"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="button" class="btn custom-btn1">Send Message</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- jQuery (must be loaded before scripts that depend on it) -->
+    <script src="./js/jquery.min.js"></script>
+    <!-- Bootstrap (depends on jQuery) -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- Glide JS -->
+    <script src="./js/glide.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- AOS (Animation on Scroll) -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- jQuery (must be loaded first) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- Bootstrap (optional, if needed) -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+    <!-- jQuery (Owl Carousel depende de jQuery) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- Custom App Scripts -->
+    <script src="./js/app.js"></script>
+
+    <!-- Local Script (must be placed after jQuery and before Owl Carousel usage) -->
+    <script>
+        $(document).ready(function () {
+            $(".project-slider").owlCarousel({
+                loop: true,
+                margin: 0,
+                nav: false, // Oculta flechas de navegación
+                dots: false, // Muestra los dots
+                autoplay: true,
+                smartSpeed: 1000,
+                margin: 24,
+                autoplayTimeout: 3000,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: false,
+                        margin: 0,
+                    },
+                    768: {
+                        items: 2,
+                    },
+                    1024: {
+                        items: 3,
+                        center: true,
+                    }
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let counters = document.querySelectorAll(".num");
+            let speed = 200; // Ajusta la velocidad de la animación
+
+            const animateCounters = () => {
+                counters.forEach(counter => {
+                    let updateCount = () => {
+                        let target = +counter.getAttribute("data-num");
+                        let count = +counter.innerText;
+                        let increment = target / speed;
+
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + increment);
+                            setTimeout(updateCount, 20);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    updateCount();
+                });
+            };
+
+            const checkScroll = () => {
+                let section = document.querySelector(".container1");
+                let position = section.getBoundingClientRect().top;
+                let screenPosition = window.innerHeight / 1.2;
+
+                if (position < screenPosition) {
+                    animateCounters();
+                    window.removeEventListener("scroll", checkScroll);
+                }
+            };
+
+            window.addEventListener("scroll", checkScroll);
+        });
+    </script>
+
+    <!-- local Reviews-slider script -->
+    <script>
+        $(document).ready(function () {
+            $("#reviews-slider").owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                dots: true,
+                items: 1,
+                smartSpeed: 800,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 5
+                    }
+                }
+            });
+        });
+    </script>
+
+    <!-- AOS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init({
+                duration: 600, 
+                once: false, 
+                mirror: true, 
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
