@@ -618,6 +618,38 @@ input.form-control {
     
 }
 
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .intro h1 {
+        font-size: 26px;
+    }
+
+    .team-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        width: 100%;
+        max-width: 400px; /* Adjust as needed */
+        margin-bottom: 20px;
+    }
+}
+
 
 
 
